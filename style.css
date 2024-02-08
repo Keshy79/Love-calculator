@@ -1,0 +1,13 @@
+#btn:hover{
+    background-color: #db8a6d;
+}
+#btn{
+    border: 1px solid white;
+    background-color: white;
+}
+#play {
+    background-color: white;
+    /* margin-top: 50px; */
+    /* height: 30px; */
+    border-radius: 5px;
+}

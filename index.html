@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script defer="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="phone.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1 {
+            font-family: 'ubuntu', sans-serif;
+        }
+    </style>
+</head>
+<body style="background-image: url(image/pexels-asad-photo-maldives-1024967.jpg); background-size: cover;">
+    <div class="mx-auto text-center my-4">
+        <h1 class="mx-auto text-light fw-bold">LOVE CALCULATOR</h1>
+        <h4 class="mx-auto text-light">Check Compatibility Percentage Here:</h4>
+        <!-- <div> -->
+        <div style="display: none;" class="mt-4 w-75 mx-auto text-center alert alert-danger " id="show">Input can not be empty</div>
+
+            <input class="form-control my-4 w-75  mx-auto " type="text" placeholder="Enter Your Name" id="yourName">
+            <input class="form-control my-4 w-75  mx-auto " type="text" placeholder="Enter Your Crush Name" id="Crush">
+            <button id="btn" class=" btn btn-lg-dark text-darklg-w-25 " onclick="checkLove()">Check Love</button>
+        <!-- </div> -->
+        <div style="display: none;" class="p-4 mt-4 w-75 text-center mx-auto rounded-2" id="play"></div>
+    </div>
+
+    <script>
+        const checkLove = () => {
+            // var song = New Audio()
+            if (yourName.value === "" ||  Crush.value === "") {
+                show.style.display ="block"
+            } else {
+                var num = Math.round(Math.random()*100)
+                if(num <= 25) {
+                    play.innerHTML = `${num}% 
+                    <p>Dey play</p>`
+                    play.style.color = 'red'
+                } else if(num > 25 && num <50) {
+                    play.innerHTML = `${num}%
+                    <p>Try someone else</p>`
+                    play.style.color = 'red'
+
+                } else if(num > 50 && num <75) {
+                    play.innerHTML = `${num}%
+                    <p>might be the one</p>`
+                    play.style.color = 'blue'
+                     
+                } else if(num > 75 && num <90) {
+                    play.innerHTML = `${num}%
+                    <p>might have a chance</p>`
+                    play.style.color = 'green'
+
+                } else if(num > 90 && num <=100) {
+                    play.innerHTML = `${num}%
+                    <p>Perfect match</p>`
+                    play.style.color = 'deeppink'
+                }
+                
+                // console.log(refN)
+                play.style.display = "block"
+                yourName.value = ''
+                Cruch.value = ''
+            }
+        }
+    </script>
+</body>
+</html>
